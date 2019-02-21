@@ -1,0 +1,255 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
+      
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+    <title>Chris Loesch Construction</title>
+</head>
+<style>
+    body{
+        background-color: #DCDCDC;
+    }
+
+    
+    /* header{
+        background: url(img/houseInSnow.jpg);
+        background-size: cover;
+        background-position: center;
+        min-height: 100vh;
+    } */
+    
+    
+    .nav-wrapper .brand-logo img {
+        height: 56px;
+        
+    }
+    /* .carousel{
+        margin-top: 0px;
+    } */
+    .carousel .carousel-item {
+        width:300px !important;
+    }
+    .grid{
+        margin: 0px;
+    }
+    .parallax-container {
+        height: 300px;
+    }
+    @media only screen and (max-width: 600px) {
+        .parallax-container {
+            height: 125px;
+        }
+    }
+    
+    
+    
+</style>
+<body>
+
+    <header>
+        <nav class="nav-wrapper orange darken-3">
+                <div class="container">
+                    <a href="#" class="brand-logo"><img class="responsive-img" id="logo" src="Logo1.jpg"/></a>
+                    <!-- data-target tells icon where to connect when clicked. -->
+                    <a href="#" class="sidenav-trigger" data-target="mobile-links">
+                        <i class="material-icons black-text">menu</i>
+                    </a>
+                    <ul class ="right hide-on-med-and-down">
+                        <li><a  href="#about-us">About Us</a></li>
+                        <li><a  href="#pictures">Pictures</a></li> 
+                        <li><a  href="#meet-the-crew">Meet The Crew</a></li>
+                    </ul>
+                </div>
+        
+            </nav>
+
+
+    </header>
+
+    <!-- parallax -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img class="responsive-img" src="img/houseInSnow.jpg" alt="houseInSnow">
+        </div>
+    </div>
+
+    
+    <!-- mobile sid-nav -->
+    <ul class="sidenav"id="mobile-links">
+        <li><a href="#about-us">About Us</a></li>
+        <li><a href="#pictures">Pictures</a></li> 
+        <li><a href="#meet-the-crew">Meet The Crew</a></li>
+    </ul>
+
+    
+
+    <!-- about us on smaller screens-->
+    <section class="container section scrollspy hide-on-med-and-down" id="about-us">
+        <div class="row valign-wrapper ">
+            <div class="col s6 l4">
+                <img src="Logo1.jpg" alt="addition" class="responsive-img materialboxed">
+            </div>
+            <div class="col s6 l6">
+                <h2 class="col s12">About Us</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            </div>
+        </div>
+    </section>
+    <!-- about us on large screens -->
+    <section class="container section scrollspy hide-on-large-only" id="about-us">
+            <div class="row">
+                <div class="col s12 l4">
+                        <h3 class="col s12 left-align">About Us</h3>
+                    <img src="Logo1.jpg" alt="addition" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 l6">
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    
+                </div>
+            </div>
+    </section>
+
+        <!-- <div class="row">
+            <div class=" col s6">
+                <form action="">
+                    <div class="orange white-text input-field">
+                        <input placeholder="tab name" id="tab-name" type="text" class="validate">
+                    </div>
+                    <div class="orange lighten-4 input-field">
+                        <input placeholder="Resouce link" id="tab-name" type="text" class="validate">
+                    </div>
+                </form>
+            </div>
+        </div> -->
+            <!-- <h1>Study Guide Creator</h1>
+            <h2 class="purple darken-3 white-text">h2 title</h2>
+            <h3>h3 title</h3>
+    </div> -->
+
+    
+
+    <!-- photo grid -->
+    <!-- <section class="container section">
+        <div class="row"> -->
+            
+                
+                
+        <!-- <div class="container grid">
+            <div class=""><img class="responsive-img materialboxed" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+            <div class="col s3"><img class="responsive-img materialboxed" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+            <div class="col s3"><img class="responsive-img materialboxed" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+            <div class="col s3"><img class="responsive-img materialboxed" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+            <div class="col s3"><img class="responsive-img materialboxed" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+            <div class="col s3"><img class="responsive-img materialboxed" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+            <div class="col s3"><img class="responsive-img materialboxed" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+        </div> -->
+    <section class="container section scrollspy" id="pictures">
+        <div class="row">
+                <!-- <div class="col s12 l12"> -->
+                    
+                <!-- <div class="full-slider">  -->
+                    <div class="col s12 l12 carousel">
+                            <h2 class="col s12 left-align">Pictures</h2>
+                            <!-- <h2 class="col s12 center-align">Pictures</h2> -->
+                        <div class="carousel-item" href="#one!"><img  src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg">
+                            <div class="container"><p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+                        </div>
+                        <div class="carousel-item" href="#two!"><img  src="img/floor_plan.jpg"></div>
+                        <div class="carousel-item" href="#three!"><img  src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="carousel-item" href="#four!"><img  src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="carousel-item" href="#five!"><img  src="img/floor_plan.jpg"></div>
+                        <div class="carousel-item" href="#six!"><img  src="Logo1.jpg">
+                            
+                        </div>
+                        <div class="carousel-item" href="#seven!"><img  src="img/looney-tunes-header-BagoGames-flickr.jpg">
+                            <div class="container"><p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p></div>
+                        </div>
+                        <div class="carousel-item" href="#eight!"><img  src="img/houseInSnow.jpg"></div>
+                        <div class="carousel-item" href="#nine!"><img  src="img/New-construction.jpg"></div>
+                        <div class="carousel-item" href="#ten!"><img  src="img/floor_plan.jpg"></div>
+                        <!-- <div class="col s6 l4 no-padding"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="col s6 l4 no-padding"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="col s6 l4 no-padding"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div> -->
+                        <!-- <div class="col s2"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="col s2"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="col s2"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="col s2"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="col s2"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="col s2"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div>
+                        <div class="col s2"><img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg"></div> -->
+                            
+                    </div>
+                <!-- </div> -->
+                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p> -->
+        </div> 
+    </section> 
+<!-- parallax -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img class="responsive-img" src="img/Home.Construction.jpg" alt="New-construction">
+        </div>
+    </div>
+
+
+    <section class="container section scrollspy" id="meet-the-crew">
+            <div class="row">
+                <div class="col s12 l4">
+                        <h3 class="col s12 left-align">Meet the Crew</h3>
+                    <img src="img/construction-crew2.jpg" alt="addition" class="responsive-img materialboxed">
+                </div>
+                <div class="col s12 l6">
+                    
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                    
+                </div>
+            </div>
+    </section>
+
+    <!-- parallax -->
+    <div class="parallax-container">
+        <div class="parallax">
+            <img class="responsive-img" src="img/New-construction.jpg" alt="New-construction">
+        </div>
+    </div>
+    <!-- <div class="container">
+        <img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg">
+    </div> -->
+    
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // first side nav is id. second is method from materialize
+            $('.sidenav').sidenav();
+            $('.materialboxed').materialbox();
+            $('.parallax').parallax();
+            $('.carousel').carousel();
+            $('.scrollspy').scrollSpy();
+        })
+    </script>
+    
+</body>
+</html>
