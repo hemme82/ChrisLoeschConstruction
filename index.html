@@ -3,6 +3,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
     <!-- favicon -->
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="icon" href="img/favicon.ico" type="image/x-icon">
@@ -224,18 +225,66 @@
                 </div>
             </div>
     </section>
+    
 
     <!-- parallax -->
     <div class="parallax-container">
         <div class="parallax">
             <img class="responsive-img" src="img/New-construction.jpg" alt="New-construction">
         </div>
+        <!-- admin button -->
+        <div class="text-center">
+            <button type="button" class="btn-flat black-text" id="buttonAdmin">Admin</button>
+        </div>
+    </div>
+    <!-- login -->
+    
+    
+
+    <div class="col s12 l6" id="loginForm">
+        <form action="">
+            <div class="input-field">
+                <input type="email" id="email">
+                <label for="email">Email</label>
+            </div>
+            <div class="input-field">
+                <input type="password" id="password">
+                <label for="password">Password</label>
+            </div>
+            <div class="center text-center">
+                <button type="button" class="btn-flat black-text grey lighten-2" 
+                id="buttonLogin"
+                onclick="logIn(document. getElementById('email').value, document. getElementById('password').value)">Login</button>
+            </div>
+        </form>
     </div>
     <!-- <div class="container">
         <img class="responsive-img" src="https://s3.amazonaws.com/hemmeschportfolio/20180807_201052+(1).jpg">
     </div> -->
     
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-app.js"></script>
 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.15.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyA2bck3oRAF_5yHDulS6tShmopBS0q5_E0",
+    authDomain: "chrisloeschconst.firebaseapp.com",
+    databaseURL: "https://chrisloeschconst.firebaseio.com",
+    projectId: "chrisloeschconst",
+    storageBucket: "chrisloeschconst.appspot.com",
+    messagingSenderId: "723527189365",
+    appId: "1:723527189365:web:e2598d07b90c216861493c",
+    measurementId: "G-Z4NXHKMQ9Q"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 
     <!-- Compiled and minified JavaScript -->
@@ -248,7 +297,24 @@
             $('.parallax').parallax();
             $('.carousel').carousel();
             $('.scrollspy').scrollSpy();
+            $('#loginForm').hide();
+            $("#buttonAdmin").click(function(){
+                $("#loginForm").toggle(500);
+            });
         })
+
+        function logIn(email, password){
+            console.log('LogIn - Email: ' +email+', Password: ' +password);
+            firebase
+                // .auth()
+                .signInWithEmailAndPassword(email, password)
+                .then(function(user) {
+                alert("User signed in");
+                })
+                .catch(function(error) {
+                alert("User is not signed in!");
+                });
+        }
     </script>
     
 </body>
