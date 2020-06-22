@@ -29,12 +29,14 @@ document.addEventListener('DOMContentLoaded', function() {
 var uploader = document.getElementById('uploader');
 var fileButton = document.getElementById('fileButton');
 
+
 //listen for file selection
 fileButton.addEventListener('change', function(e) {
     //get file
     var file = e.target.files[0];
     // create a storage ref
     var storageRef = firebase.storage().ref('images/' + file.name);
+
     //upload file
     var task = storageRef.put(file);
     //update progress bar
@@ -51,6 +53,11 @@ fileButton.addEventListener('change', function(e) {
         },
 
         function complete() {
+            storageRef.getDownloadURL().then(function(url){
+                var img = document.getElementById('testID');
+                img.src = url;
+                console.log(url);
+            })
 
         }
     )
