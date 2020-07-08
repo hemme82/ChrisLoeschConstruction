@@ -71,7 +71,7 @@ var fileButton = document.getElementById('fileButton');
 
 //listen for file selection
 fileButton.addEventListener('change', function(e) {
-    console.log(e.target.file);
+    
     //get file
     var file = e.target.files[0];
     // create a storage ref
@@ -85,7 +85,6 @@ fileButton.addEventListener('change', function(e) {
         function progress(snapshot) {
             var percentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
             uploader.value = percentage;
-            console.log(percentage);
             if(percentage == 100){
                 
                 setTimeout(
@@ -94,7 +93,7 @@ fileButton.addEventListener('change', function(e) {
                         $('#modal-create').hide();
                         
                     }, 500);
-                    
+                    window.location.reload();     
             }
         },
 
@@ -126,7 +125,7 @@ var folderRef = storageReference.child("images");
                 
                 result.items.forEach(itemRef => {
                     itemRef.getDownloadURL().then(url => {
-                        $(".imageList").append(`
+                        $("#delete-form").append(`
                             
                         
 
@@ -134,25 +133,45 @@ var folderRef = storageReference.child("images");
                                 <img class="responsive-img" src=${url}>
                             </div>
                         
-                        <input class="btn yellow darken-2 z-depth-0 id=${itemRef.location.path_} type="submit" value ="Delete">  
+                        <input class="btn yellow darken-2 z-depth-0 id=${itemRef.location.path_} type="button" value="Delete" onClick="deletePic(this.id)">  
                             
                          `)
-                         var pictureID = document.getElementById(itemRef.location.path_);
-                         console.log(pictureID);
-                         var pictureRef = storageReference.child(pictureID);
-                         console.log(pictureRef);
-                            pictureRef.addEventListener("click", e => {
-                                confirm("Picture will be deleted")
-                                //delete the file
-                                pictureRef.delete().then(function() {
+                        //  var pictureID = document.getElementById(itemRef.location.path_);
+                        //  console.log(pictureID);
+                        //  var pictureRef = storageReference.child(pictureID);
+                        //  console.log(pictureRef);
+                        //     pictureRef.addEventListener("click", e => {
+                        //         confirm("Picture will be deleted")
+                        //         //delete the file
+                        //         pictureRef.delete().then(function() {
                                 
-                        })
-                            });
-                         
+                        // })
+                        //     });
+                            
                     });
+                    
                 });
                 
             })
+            function deletePic(clicked_id){
+                var storage = firebase.storage();
+                var storageRef = storage.ref();
+                // Create a child reference
+                // var imagesRef = storageRef.child('images');
+                console.log(clicked_id);
+                var spaceRef = storageRef.child("images/" + clicked_id);
+                    console.log("SpaceRef " + spaceRef);
+                if(confirm("Picture will be deleted")){
+                    spaceRef.delete().then(function(){
+                    }).catch(function(error){
+                        console.log(error);
+                    })
+                    window.location.reload();
+                    }else{return false
+                        window.location.reload();};
+                
+                console.log("I'm clicked")
+            }
 
 
 
