@@ -1,3 +1,4 @@
+var arrayOfImages = [];
 $(document).ready(function(){
     // first side nav is id. second is method from materialize
     $('.sidenav').sidenav();
@@ -11,7 +12,7 @@ $(document).ready(function(){
 	// slider.append(
     //     '<a class="carousel-item active" href="#eleven!"><img src="http://lorempixel.com/250/250/nature/3"></a>');
      
-        var arrayOfImages = [];
+        
         var storageReference = firebase.storage().ref();
         var folderRef = storageReference.child("images");
     
@@ -26,6 +27,7 @@ $(document).ready(function(){
                         slider.append(`
                         <a class="carousel-item"><img src=${url}></a>
                         `);
+
                         if (slider.hasClass('initialized')){
                             slider.removeClass('initialized')
                             }
@@ -34,7 +36,8 @@ $(document).ready(function(){
                             slider.carousel();
                             
                             
-                        console.log(url);
+                        console.log(itemRef.location.path_);
+                        console.log(itemRef.name);
                             arrayOfImages.push(url);
                         
                     })
@@ -46,27 +49,12 @@ $(document).ready(function(){
             //     console.log("error == ", error);
             // });
     
-        
-        // arrayOfImages.forEach(link => {
-        //     console.log(link);
-        //     slider.append(
-        //         '<a class="carousel-item active" href="#eleven!"><img src="http://lorempixel.com/250/250/nature/3"></a>');
-            
-            // let carousel = document.createElement("div");
-            // carousel.className = "carousel-item";
-            // carousel.innerHTML = '<img src="img/floor_plan.jpg">';
-            // document.body.append(carousel);
-
-            //remove the 'initialized' class which prevents slider from initializing itself again when it's not needed
-            
-    
-    
-
-    // $('#logout').hide();
-    // $('#uploadPic').hide();
 
     $("#buttonAdmin").click(function(){
         $("#loginForm").toggle(500);
+    });
+    $("#buttonDelete").click(function(){
+        $("#deleteForm").toggle(500);
     });
 })
 
@@ -83,6 +71,7 @@ var fileButton = document.getElementById('fileButton');
 
 //listen for file selection
 fileButton.addEventListener('change', function(e) {
+    console.log(e.target.file);
     //get file
     var file = e.target.files[0];
     // create a storage ref
@@ -98,7 +87,7 @@ fileButton.addEventListener('change', function(e) {
             uploader.value = percentage;
             console.log(percentage);
             if(percentage == 100){
-                $('#modal-success').show();
+                
                 setTimeout(
                     function() 
                     {
@@ -125,6 +114,49 @@ fileButton.addEventListener('change', function(e) {
         }
     )
 })
+//list of images for delete modal
+var storageReference = firebase.storage().ref();
+var folderRef = storageReference.child("images");
+
+
+    
+        folderRef
+            .listAll()
+            .then(result => {
+                
+                result.items.forEach(itemRef => {
+                    itemRef.getDownloadURL().then(url => {
+                        $(".imageList").append(`
+                            
+                        
+
+                            <div>
+                                <img class="responsive-img" src=${url}>
+                            </div>
+                        
+                        <input class="btn yellow darken-2 z-depth-0 id=${itemRef.location.path_} type="submit" value ="Delete">  
+                            
+                         `)
+                         var pictureID = document.getElementById(itemRef.location.path_);
+                         console.log(pictureID);
+                         var pictureRef = storageReference.child(pictureID);
+                         console.log(pictureRef);
+                            pictureRef.addEventListener("click", e => {
+                                confirm("Picture will be deleted")
+                                //delete the file
+                                pictureRef.delete().then(function() {
+                                
+                        })
+                            });
+                         
+                    });
+                });
+                
+            })
+
+
+
+
 
 
 
