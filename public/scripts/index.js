@@ -131,9 +131,10 @@ var folderRef = storageReference.child("images");
 
                             <div>
                                 <img class="responsive-img" src=${url}>
+                                <button id=${itemRef.location.path_} class="btn yellow darken-2 z-depth-0 value="Delete" onClick="deletePic(this.id)">Delete</button>
                             </div>
                         
-                        <input class="btn yellow darken-2 z-depth-0 id=${itemRef.location.path_} type="button" value="Delete" onClick="deletePic(this.id)">  
+                          
                             
                          `)
                         //  var pictureID = document.getElementById(itemRef.location.path_);
@@ -159,19 +160,23 @@ var folderRef = storageReference.child("images");
                 // Create a child reference
                 // var imagesRef = storageRef.child('images');
                 console.log(clicked_id);
-                var spaceRef = storageRef.child("images/" + clicked_id);
+                var spaceRef = storageRef.child(clicked_id);
                     console.log("SpaceRef " + spaceRef);
                 if(confirm("Picture will be deleted")){
                     spaceRef.delete().then(function(){
                     }).catch(function(error){
                         console.log(error);
                     })
-                    window.location.reload();
+                    
                     }else{return false
-                        window.location.reload();};
+                    window.location.reload();};
                 
                 console.log("I'm clicked")
             }
+            function reply_click(clicked_id)
+  {
+      alert(clicked_id);
+  }
 
 
 
