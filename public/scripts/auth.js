@@ -3,10 +3,13 @@ auth.onAuthStateChanged(user => {
     if(user){
         $('#logout').show();
         $('#uploadPic').show();
+        $('#buttonDelete').show();
+
         console.log('user logged in: ', user);
     } else {
         $('#logout').hide();
         $('#uploadPic').hide();
+        $('#buttonDelete').hide();
         
         console.log('user logged out');
         
