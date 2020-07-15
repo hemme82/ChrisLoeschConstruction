@@ -164,12 +164,13 @@ var folderRef = storageReference.child("images");
                     console.log("SpaceRef " + spaceRef);
                 if(confirm("Picture will be deleted")){
                     spaceRef.delete().then(function(){
+                        window.location.reload();
                     }).catch(function(error){
                         console.log(error);
                     })
                     
                     }else{return false
-                    window.location.reload();};
+                    };
                 
                 console.log("I'm clicked")
             }
