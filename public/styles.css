@@ -12,3 +12,12 @@
 body, #message { margin-top: 0; background: white; box-shadow: none; }
 body { border-top: 16px solid #ffa100; }
 } */
+
+img {
+    border-radius: 10px;
+}
+
+/* div {
+    outline-style: solid;
+    outline-color:red;
+} */
